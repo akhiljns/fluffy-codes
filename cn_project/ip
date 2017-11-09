@@ -1,0 +1,40 @@
+#!/bin/sh
+
+IPv4=$1
+
+ping -c 4 $IPv4>pingfile
+
+set -- `wc -l pingfile`
+size=$1
+
+	if [ $size -eq 9 ]
+
+	then 
+		echo "ping status - check , receiving packets....."
+
+		echo "\nselect telnet(1)\n"
+		
+		echo "remote desktop(2)\n"
+
+		echo "SecureShell(3)\n"
+
+		echo "file transfer protocol(4)\n"
+
+		read n
+		
+		case "$n" in
+			
+			1) telnet "$IPv4";;
+
+			2) rdesktop "$IPv4";;
+
+			3) ssh "$IPv4";;
+
+			4) ftp "$IPv4";;
+		esac	
+
+		else
+
+		echo "\nping status - failed to connect"
+
+fi
