@@ -2,6 +2,7 @@ the solution is based on backtracking algorithm which solves the probel in O(n^n
 
 we are essentially creating subtrees of every solution we might find
 
+
 for example                                                              root node
                                                  2                           3                            4
                                             2    3     4              2      3       4              2      3      4
